@@ -54,7 +54,7 @@ def home():
 
         <div class="container">
 
-            <h1>Hello! 👋</h1>
+            <h1>Hello Dudes! 👋</h1>
 
             <h2>I am a CI/CD Pipeline Website</h2>
 
