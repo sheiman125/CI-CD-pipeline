@@ -1,125 +1,70 @@
-from flask import Flask, request
+from flask import Flask
 
 app = Flask(__name__)
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/")
 def home():
-    result = ""
-
-    if request.method == "POST":
-        try:
-            num1 = float(request.form["num1"])
-            num2 = float(request.form["num2"])
-            operation = request.form["operation"]
-
-            if operation == "add":
-                result = num1 + num2
-            elif operation == "subtract":
-                result = num1 - num2
-            elif operation == "multiply":
-                result = num1 * num2
-            elif operation == "divide":
-                if num2 == 0:
-                    result = "Cannot divide by zero"
-                else:
-                    result = num1 / num2
-
-        except ValueError:
-            result = "Please enter valid numbers as you cann bro"
-
-    return f"""
+    return """
     <!DOCTYPE html>
     <html>
     <head>
-        <title>DevOps Calculator</title>
+        <title>My CI/CD Project</title>
+
         <style>
-            body {{
+            body {
                 font-family: Arial, sans-serif;
                 background: #f4f4f4;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 height: 100vh;
-            }}
+                margin: 0;
+            }
 
-            .calculator {{
+            .container {
                 background: white;
-                padding: 30px;
-                border-radius: 12px;
+                padding: 50px;
+                border-radius: 15px;
                 box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-                width: 320px;
-            }}
-
-            h2 {{
                 text-align: center;
-            }}
+                width: 500px;
+            }
 
-            input, select, button {{
-                width: 100%;
-                padding: 10px;
-                margin: 8px 0;
-                box-sizing: border-box;
-            }}
+            h1 {
+                font-size: 36px;
+                margin-bottom: 15px;
+            }
 
-            button {{
-                background: #222;
-                color: white;
-                border: none;
-                cursor: pointer;
-                border-radius: 5px;
-            }}
+            p {
+                font-size: 18px;
+                color: #555;
+            }
 
-            button:hover {{
-                background: #444;
-            }}
-
-            .result {{
-                text-align: center;
-                font-size: 22px;
-                margin-top: 20px;
-            }}
+            .status {
+                margin-top: 25px;
+                padding: 12px;
+                background: #e8f5e9;
+                border-radius: 8px;
+                font-weight: bold;
+            }
         </style>
     </head>
 
     <body>
 
-        <div class="calculator">
+        <div class="container">
 
-            <h2>Calculator</h2>
+            <h1>Hello! 👋</h1>
 
-            <form method="POST">
+            <h2>I am a CI/CD Pipeline Website</h2>
 
-                <input
-                    type="number"
-                    step="any"
-                    name="num1"
-                    placeholder="First number ONLY"
-                    required
-                >
+            <p>
+                This website is deployed automatically using
+                Docker, GitHub Actions and AWS.
+            </p>
 
-                <select name="operation">
-                    <option value="add">+</option>
-                    <option value="subtract">-</option>
-                    <option value="multiply">×</option>
-                    <option value="divide">÷</option>
-                </select>
-
-                <input
-                    type="number"
-                    step="any"
-                    name="num2"
-                    placeholder="Second number only bro"
-                    required
-                >
-
-                <button type="submit">
-                    Calculate
-                </button>
-
-            </form>
-
-            <div class="result">
-                Result: {result}
+            <div class="status">
+                🚀 CI/CD Deployment Successful
             </div>
 
         </div>
