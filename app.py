@@ -93,7 +93,7 @@ def home():
                     type="number"
                     step="any"
                     name="num1"
-                    placeholder="First number"
+                    placeholder="First number ONLY"
                     required
                 >
 
@@ -108,7 +108,7 @@ def home():
                     type="number"
                     step="any"
                     name="num2"
-                    placeholder="Second number"
+                    placeholder="Second number only bro"
                     required
                 >
 
