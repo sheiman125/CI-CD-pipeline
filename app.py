@@ -25,7 +25,7 @@ def home():
                     result = num1 / num2
 
         except ValueError:
-            result = "Please enter valid numbers"
+            result = "Please enter valid numbers as you cann bro"
 
     return f"""
     <!DOCTYPE html>
